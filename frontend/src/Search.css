@@ -1,0 +1,70 @@
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 50px;
+  padding-left: 20px;
+  padding-right: 20px; /* 左側に20pxの余白を追加 */
+  width: 100%;   
+  height: 100%;      /* 画面の幅いっぱいに広げる */
+}
+
+
+
+.search-section {
+  width: 100%;
+}
+
+.search-list-wrapper {
+  width: 100%;
+  display: flex;
+  overflow-x: auto; /* 横スクロールを有効にする */
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+ 
+  
+}
+
+.list-arrow {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.left-arrow {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.right-arrow {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.search-list {
+  display: contents; /* 子のscroll-areaでflex制御するので、ここは無効化 */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-list-item {
+  width: 220px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: aqua;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0; /* 縮まない */
+}
+
+.search-list-item.selected {
+  background-color: #1a1a1a;
+  color: white;
+}
+
