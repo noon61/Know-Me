@@ -1,0 +1,211 @@
+.profile-container {
+    display: flex;
+    padding: 2rem;
+    gap: 2rem;
+  }
+  
+  .profile-left {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+  
+  .profile-name-info {
+    text-align: center;
+  }
+  
+  .edit-button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #ffb6c1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .profile-right {
+    flex-grow: 1;
+  }
+  
+  .profile-right h3 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .profile-right p {
+    margin-bottom: 1rem;
+  }
+  .profile-name-info input {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .profile-right input,
+  .profile-right textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  .sns-links p {
+    margin: 4px 0;
+  }
+  
+  .sns-links a {
+    color: #ffb6c1;
+    text-decoration: none;
+  }
+  
+  .sns-links a:hover {
+    text-decoration: underline;
+  }
+  .sns-icons {
+    margin-top: 1rem;
+  }
+  
+  .sns-item {
+    margin-bottom: 0.5rem;
+  }
+  
+  .sns-item input {
+    display: block;
+    margin-top: 0.3rem;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  
+  
+  
+  .edit-button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #ffb6c1; /* 濃いピンクに */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .edit-button:hover {
+    background-color:#ffb6c1; /* ホバー時に少し明るく */
+  }
+  input, textarea {
+    background-color: #fff0f5;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 0.5rem;
+  }
+  .tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .tag {
+    padding: 6px 12px;
+    border: 1px solid #ffb6c1;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #ffb6c1;
+    font-size: 14px;
+    transition: background-color 0.2s, color 0.2s;
+  }
+  
+  .tag.selected {
+    background-color: #ffb6c1;
+    color: white;
+  }
+  .tag-select {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  
+  .tag-button {
+    display: inline-block;
+    margin: 4px 6px 4px 0;
+    padding: 6px 12px;
+    border-radius: 16px;
+    border: 1.5px solid #ffb6c1; /* ピンク系 */
+    background-color: rgb(255, 255, 255);
+    color: #231e21;
+    cursor: pointer;
+    font-size: 0.9rem;
+    user-select: none;
+    transition: 0.2s;
+  }
+  
+  .tag-button.selected {
+    background-color: #ffb6c1;
+    color: white;
+    border-color: #fdacd5;
+  }
+  
+  .tag-button.readonly {
+    background-color: #ffffff;
+    color: #312e30;
+    border: 1.5px solid #ffb6c1;
+    cursor: default;
+    pointer-events: none;
+    border-color: #ffb6c1;
+  }
+  
+  
+  .tags-display {
+    margin-top: 4px;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #ffb6c1, #add8e6);
+    padding: 10px 20px;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-link {
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .nav-link.active {
+    border-bottom: 2px solid white;
+  }
+  
+  .logout-button {
+    background-color: white;
+    border: none;
+    color: #ff69b4;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  
