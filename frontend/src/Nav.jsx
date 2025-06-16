@@ -12,18 +12,16 @@ const Nav = () => {
         <ul className="nav-list">
           <li className="nav-item">
             <Link
-              to="/home"
-              className={currentPath === "/home" ? "active" : ""}
-              
+              to="/profile"
+              className={currentPath === "/profile" || currentPath === "/" ? "active" : ""}
             >
-              Home
+              Profile
             </Link>
           </li>
           <li className="nav-item">
             <Link
               to="/search"
               className={currentPath === "/search" ? "active" : ""}
-              
             >
               Search
             </Link>
@@ -32,7 +30,6 @@ const Nav = () => {
             <Link
               to="/message"
               className={currentPath === "/message" ? "active" : ""}
-              
             >
               Message
             </Link>
@@ -41,7 +38,6 @@ const Nav = () => {
             <Link
               to="/login"
               className={currentPath === "/login" ? "active" : ""}
-              
             >
               ログイン
             </Link>

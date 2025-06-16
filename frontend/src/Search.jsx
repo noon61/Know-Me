@@ -6,7 +6,7 @@ import leftIcon from './assets/left.svg';
 import { motion } from 'framer-motion';
 import users from './assets/users.json'; // ユーザーデータのインポート（必要に応じて）
 
-const Search = () => {
+const Search = ({searchResult,setSearchResult}) => {
   // 各リスト10個ずつ用意
   const labs = [
     "研究室1", "研究室2", "研究室3", "研究室4", "研究室5",
@@ -21,7 +21,7 @@ const Search = () => {
     "科目6", "科目7", "科目8", "科目9", "科目10"
   ];
 
-  const [searchResult, setSearchResult] = React.useState(null);
+  
 
   // 選択状態
   const [selectedLabs, setSelectedLabs] = React.useState([]);
@@ -97,7 +97,7 @@ const Search = () => {
     
     setSearchResult(results);
     console.log("Search Results:", results);
-
+    navigate('./result'); // 検索結果ページへ遷移});
 
 
     
@@ -111,115 +111,117 @@ const Search = () => {
   });
 
   return (
-    <div className="search-container">
-      {/* 研究室 */}
-      <div className="search-section">
-        <h2 className="search-section-title">研究室</h2>
-        <div className="search-list-wrapper">
-          <img
-            src={leftIcon}
-            alt="left"
-            className="list-arrow left-arrow"
-            onClick={() => handleScroll("lab", "left")}
-          />
-          <ul className="search-list">
-            {labs.slice(labIndex, labIndex + 5).map((lab) => (
-              <motion.li
-                key={lab}
-                className={`search-list-item ${selectedLabs.includes(lab) ? "selected" : ""}`}
-                onClick={() => toggleSelection("lab", lab)}
-                variants={getItemVariants()}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-                transition={{ duration: 0.3 }}
-              >
-                {lab}
-              </motion.li>
-            ))}
-          </ul>
-          <img
-            src={rightIcon}
-            alt="right"
-            className="list-arrow right-arrow"
-            onClick={() => handleScroll("lab", "right")}
-          />
+    <div>
+      <div className="search-container">
+        {/* 研究室 */}
+        <div className="search-section">
+          <h2 className="search-section-title">研究室</h2>
+          <div className="search-list-wrapper">
+            <img
+              src={leftIcon}
+              alt="left"
+              className="list-arrow left-arrow"
+              onClick={() => handleScroll("lab", "left")}
+            />
+            <ul className="search-list">
+              {labs.slice(labIndex, labIndex + 5).map((lab) => (
+                <motion.li
+                  key={lab}
+                  className={`search-list-item ${selectedLabs.includes(lab) ? "selected" : ""}`}
+                  onClick={() => toggleSelection("lab", lab)}
+                  variants={getItemVariants()}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  transition={{ duration: 0.3 }}
+                >
+                  {lab}
+                </motion.li>
+              ))}
+            </ul>
+            <img
+              src={rightIcon}
+              alt="right"
+              className="list-arrow right-arrow"
+              onClick={() => handleScroll("lab", "right")}
+            />
+          </div>
+        </div>
+
+        {/* サークル */}
+        <div className="search-section">
+          <h2 className="search-section-title">サークル</h2>
+          <div className="search-list-wrapper">
+            <img
+              src={leftIcon}
+              alt="left"
+              className="list-arrow left-arrow"
+              onClick={() => handleScroll("circle", "left")}
+            />
+            <ul className="search-list">
+              {circles.slice(circleIndex, circleIndex + 5).map((circle) => (
+                <motion.li
+                  key={circle}
+                  className={`search-list-item ${selectedCircles.includes(circle) ? "selected" : ""}`}
+                  onClick={() => toggleSelection("circle", circle)}
+                  variants={getItemVariants()}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  transition={{ duration: 0.3 }}
+                >
+                  {circle}
+                </motion.li>
+              ))}
+            </ul>
+            <img
+              src={rightIcon}
+              alt="right"
+              className="list-arrow right-arrow"
+              onClick={() => handleScroll("circle", "right")}
+            />
+          </div>
+        </div>
+
+        {/* 科目 */}
+        <div className="search-section">
+          <h2 className="search-section-title">科目</h2>
+          <div className="search-list-wrapper">
+            <img
+              src={leftIcon}
+              alt="left"
+              className="list-arrow left-arrow"
+              onClick={() => handleScroll("subject", "left")}
+            />
+            <ul className="search-list">
+              {subjects.slice(subjectIndex, subjectIndex + 5).map((subject) => (
+                <motion.li
+                  key={subject}
+                  className={`search-list-item ${selectedSubjects.includes(subject) ? "selected" : ""}`}
+                  onClick={() => toggleSelection("subject", subject)}
+                  variants={getItemVariants()}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  transition={{ duration: 0.3 }}
+                >
+                  {subject}
+                </motion.li>
+              ))}
+            </ul>
+            <img
+              src={rightIcon}
+              alt="right"
+              className="list-arrow right-arrow"
+              onClick={() => handleScroll("subject", "right")}
+            />
+          </div>
         </div>
       </div>
-
-      {/* サークル */}
-      <div className="search-section">
-        <h2 className="search-section-title">サークル</h2>
-        <div className="search-list-wrapper">
-          <img
-            src={leftIcon}
-            alt="left"
-            className="list-arrow left-arrow"
-            onClick={() => handleScroll("circle", "left")}
-          />
-          <ul className="search-list">
-            {circles.slice(circleIndex, circleIndex + 5).map((circle) => (
-              <motion.li
-                key={circle}
-                className={`search-list-item ${selectedCircles.includes(circle) ? "selected" : ""}`}
-                onClick={() => toggleSelection("circle", circle)}
-                variants={getItemVariants()}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-                transition={{ duration: 0.3 }}
-              >
-                {circle}
-              </motion.li>
-            ))}
-          </ul>
-          <img
-            src={rightIcon}
-            alt="right"
-            className="list-arrow right-arrow"
-            onClick={() => handleScroll("circle", "right")}
-          />
-        </div>
+      <div className="search-buttons">
+        <button onClick={clearSelections} className='custom-button'>クリア</button>
+        <button onClick={handleSearch} className='custom-button'>検索</button>
       </div>
-
-      {/* 科目 */}
-      <div className="search-section">
-        <h2 className="search-section-title">科目</h2>
-        <div className="search-list-wrapper">
-          <img
-            src={leftIcon}
-            alt="left"
-            className="list-arrow left-arrow"
-            onClick={() => handleScroll("subject", "left")}
-          />
-          <ul className="search-list">
-            {subjects.slice(subjectIndex, subjectIndex + 5).map((subject) => (
-              <motion.li
-                key={subject}
-                className={`search-list-item ${selectedSubjects.includes(subject) ? "selected" : ""}`}
-                onClick={() => toggleSelection("subject", subject)}
-                variants={getItemVariants()}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-                transition={{ duration: 0.3 }}
-              >
-                {subject}
-              </motion.li>
-            ))}
-          </ul>
-          <img
-            src={rightIcon}
-            alt="right"
-            className="list-arrow right-arrow"
-            onClick={() => handleScroll("subject", "right")}
-          />
-        </div>
-      </div>
-
-      {/* ボタン */}
-      <button onClick={clearSelections}>クリア</button>
-      <button onClick={handleSearch}>検索</button>
     </div>
   );
 };
