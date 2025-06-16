@@ -161,14 +161,14 @@ function Profile() {
   return (
     <>
       {/* ナビゲーションバー */}
-      <nav className="navbar">
+      {/* <nav className="navbar">
         <div className="nav-links">
           <NavLink to="/profile" className="nav-link">Profile</NavLink>
           <NavLink to="/search" className="nav-link">Search</NavLink>
           <NavLink to="/message" className="nav-link">Message</NavLink>
         </div>
         <button className="logout-button" onClick={handleLogout}>Log out</button>
-      </nav>
+      </nav> */}
 
     <div className="profile-container">
       <div className="profile-left">

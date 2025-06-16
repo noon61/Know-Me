@@ -34,10 +34,10 @@ const Nav = () => {
               Message
             </Link>
           </li>
-          <li className="nav-item nav-login">
+          <li className="nav-login nav-item ">
             <Link
               to="/login"
-              className={currentPath === "/login" ? "active" : ""}
+              className={currentPath === "/login" ? "active logout-button" : "logout-button"}
             >
               ログイン
             </Link>

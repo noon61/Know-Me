@@ -7,6 +7,7 @@ import Login from './Login'
 import SearchResult from './SearchResult'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
+import SignUp from './SignUp'
 
 function App() {
   const [searchResult, setSearchResult] = useState([]);
@@ -23,6 +24,7 @@ function App() {
           <Route path="/search/result" element={<SearchResult searchResult={searchResult} />} />
           <Route path="/message" element={<Message />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/SignUp" element={<SignUp />} />
           {/* Add more routes as needed */}
         </Routes>
         </div>
