@@ -7,7 +7,7 @@ import "./Profile.css";
 
 function Profile() {
   const navigate = useNavigate();
-  const [name, setName] = useState("置田　まひる");
+  const [name, setName] = useState("函館　未来");
   const [grade, setGrade] = useState("2年　情報システムコース");
 
   const [labOptions, setLabOptions] = useState([
@@ -19,8 +19,8 @@ function Profile() {
     "姜研",
     "所属なし",
   ]);
-  const [lab, setLab] = useState("◯◯研究室");
-  const [newLab, setNewLab] = useState("");
+  const [lab, setLab] = useState("所属なし");
+  const [newLab, setNewLab] = useState("所属なし");
 
   const [circleOptions, setCircleOptions] = useState([
     "Dance.Sarfy",
@@ -88,9 +88,9 @@ function Profile() {
   const [isEditing, setIsEditing] = useState(false);
   const [image, setImage] = useState(profileImage);
 
-  const [instagram, setInstagram] = useState("___ma.o6");
-  const [xAccount, setXAccount] = useState("chamomile_301");
-  const [github, setGithub] = useState("noon61");
+  const [instagram, setInstagram] = useState("fun_hakodate");
+  const [xAccount, setXAccount] = useState("Funcl_GI");
+  const [github, setGithub] = useState("Funcy-ICT");
 
   const handleEdit = () => setIsEditing(true);
   const handleSave = () => setIsEditing(false);
@@ -340,7 +340,7 @@ function Profile() {
                 </span>
               ))
             ) : (
-              <span>所属なし</span>
+               <span></span>
             )}
           </div>
         )}
@@ -401,7 +401,7 @@ function Profile() {
                     ))}
                   </div>
                 ) : (
-                  "未登録"
+                  "未履修"
                 )}
               </div>
             ))}
