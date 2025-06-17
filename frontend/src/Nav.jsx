@@ -39,7 +39,7 @@ const Nav = () => {
               to="/login"
               className={currentPath === "/login" ? "active logout-button" : "logout-button"}
             >
-              ログイン
+              Log out
             </Link>
           </li>
         </ul>

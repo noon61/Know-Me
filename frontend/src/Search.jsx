@@ -219,8 +219,8 @@ const Search = ({searchResult,setSearchResult}) => {
         </div>
       </div>
       <div className="search-buttons">
-        <button onClick={clearSelections} className='custom-button'>クリア</button>
-        <button onClick={handleSearch} className='custom-button'>検索</button>
+        <button onClick={clearSelections} className='custom-button'>clear</button>
+        <button onClick={handleSearch} className='custom-button'>search</button>
       </div>
     </div>
   );

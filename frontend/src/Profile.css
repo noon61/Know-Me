@@ -122,27 +122,30 @@
   }
   
   .tag {
-    padding: 6px 12px;
-    border: 1px solid #ffb6c1;
-    border-radius: 20px;
-    cursor: pointer;
-    color: #ffb6c1;
-    font-size: 14px;
-    transition: background-color 0.2s, color 0.2s;
-  }
+  padding: 6px 12px;
+  border: 1px solid #ffb6c1;
+  border-radius: 20px;
+  cursor: pointer;
+  color: #ffb6c1;
+  font-size: 14px;
+  transition: background-color 0.1s ease, color 0.1s ease;
+}
+ 
+　.tag.selected {
+  background-color: #ffb6c1;
+  color: white;
+
+}
+
   
-  .tag.selected {
-    background-color: #ffb6c1;
-    color: white;
-  }
-  .tag-select {
+.tag-select {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
-    margin-bottom: 1rem;
-  }
+    margin-bottom: 1rem; 
+}
   
-  .tag-button {
+.tag-button {
     display: inline-block;
     margin: 4px 6px 4px 0;
     padding: 6px 12px;
@@ -153,37 +156,42 @@
     cursor: pointer;
     font-size: 0.9rem;
     user-select: none;
-    transition: 0.2s;
-  }
+    transition: 0.1s;
+}
   
-  .tag-button.selected {
+.tag-button.selected {
     background-color: #ffb6c1;
     color: white;
-    border-color: #fdacd5;
-  }
-  
-  .tag-button.readonly {
-    background-color: #ffffff;
+    /* border-color: #fdacd5; */ 
+}
+/* .tag-button:hover {
+  background-color: #ffe4ec;
+
+}  */
+.tag-button.readonly {
+  background-color: #ffffff;
     color: #312e30;
     border: 1.5px solid #ffb6c1;
     cursor: default;
     pointer-events: none;
     border-color: #ffb6c1;
-  }
+    
+}
   
+
   
-  .tags-display {
+.tags-display {
     margin-top: 4px;
-  }
-  .navbar {
+}
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: linear-gradient(to right, #ffb6c1, #add8e6);
     padding: 10px 20px;
-  }
+}
   
-  .nav-links {
+  /* .nav-links {
     display: flex;
     gap: 20px;
   }
@@ -196,16 +204,10 @@
   
   .nav-link.active {
     border-bottom: 2px solid white;
-  }
-  
-  .logout-button {
-    background-color: white;
-    border: none;
-    color: #ff69b4;
-    font-weight: bold;
-    padding: 5px 12px;
-    border-radius: 8px;
-    cursor: pointer;
-  }
+  } */
   
   
+.logout-button {
+  color: #ffffff !important;
+}
+   
