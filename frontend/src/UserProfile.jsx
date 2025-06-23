@@ -106,6 +106,9 @@ function UserProfile() {
             </a>
           </div>
         </div>
+        <div>
+          <button className="edit-button"onClick={()=>navigate("../message")}>メッセージ</button>
+        </div>
       </div>
 
       <div className="profile-right">
