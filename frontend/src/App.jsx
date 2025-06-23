@@ -5,6 +5,7 @@ import Search from './Search'
 import Profile from './Profile'
 import Login from './Login'
 import SearchResult from './SearchResult'
+import UserProfile from './UserProfile'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 import SignUp from './SignUp'
@@ -25,6 +26,7 @@ function App() {
           <Route path="/message" element={<Message />} />
           <Route path="/login" element={<Login />} />
           <Route path="/SignUp" element={<SignUp />} />
+          <Route path="/userProfile/" element={<UserProfile />} />
           {/* Add more routes as needed */}
         </Routes>
         </div>
