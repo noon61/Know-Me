@@ -35,5 +35,9 @@
     cursor: pointer;
     margin-top: 1rem;
   }
-  
+  .error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 8px;
+}
   

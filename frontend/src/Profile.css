@@ -210,4 +210,10 @@
 .logout-button {
   color: #ffffff !important;
 }
-   
+.f1-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffb6c1;
+}
