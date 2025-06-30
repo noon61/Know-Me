@@ -75,8 +75,20 @@
     text-decoration: underline;
   }
   .sns-icons {
-    margin-top: 1rem;
-  }
+  display: flex;
+  justify-content: center; /* ← これが中央揃えのポイント！ */
+  gap: 12px;                /* アイコン間に少し余白（お好みで） */
+  margin-top: 1rem;
+} 
+/* 編集時：縦並びで左揃え（中央でもOK） */
+.sns-icons.edit-mode {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ← 中央に揃えたい場合。左寄せなら flex-start に */
+  gap: 8px;
+  margin-top: 1rem;
+}
+
   
   .sns-item {
     margin-bottom: 0.5rem;
