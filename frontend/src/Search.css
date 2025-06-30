@@ -1,4 +1,8 @@
 .search-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%; 
+  max-width: 1100px; 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -47,6 +51,7 @@
 }
 
 .search-list {
+  align-items: center;
   display: contents;
   list-style: none;
   padding: 0;

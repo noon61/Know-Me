@@ -38,18 +38,18 @@ const Search = ({searchResult,setSearchResult}) => {
 
   // スクロールハンドラ（共通化）
   const handleScroll = (type, direction) => {
-    setScrollDirection(direction);
+    //setScrollDirection(direction);
     if (type === "lab") {
-      if (direction === "left") setLabIndex((prev) => Math.max(prev - 5, 0));
-      else setLabIndex((prev) => Math.min(prev + 5, labs.length - 5));
+      if (direction === "left") setLabIndex((prev) => Math.max(prev - 1, 0));
+      else setLabIndex((prev) => Math.min(prev + 1, labs.length - 5));
     }
     if (type === "circle") {
-      if (direction === "left") setCircleIndex((prev) => Math.max(prev - 5, 0));
-      else setCircleIndex((prev) => Math.min(prev + 5, circles.length - 5));
+      if (direction === "left") setCircleIndex((prev) => Math.max(prev - 1, 0));
+      else setCircleIndex((prev) => Math.min(prev + 1, circles.length - 5));
     }
     if (type === "subject") {
-      if (direction === "left") setSubjectIndex((prev) => Math.max(prev - 5, 0));
-      else setSubjectIndex((prev) => Math.min(prev + 5, subjects.length - 5));
+      if (direction === "left") setSubjectIndex((prev) => Math.max(prev - 1, 0));
+      else setSubjectIndex((prev) => Math.min(prev + 1, subjects.length - 5));
     }
   };
 
