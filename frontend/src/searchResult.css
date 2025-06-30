@@ -1,3 +1,45 @@
-.container{
-    
+s
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.result-card {
+  background:#ffeef0;
+  border-radius: 16px;
+  padding: 16px 20px;
+  width: 280px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: left;
+  transition: transform 0.2s ease-in-out;
+}
+
+.result-card:hover {
+  transform: scale(1.03);
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 1.4em;
+  color: #423d3d;
+}
+
+.card-header .lab {
+  font-size: 0.95em;
+  color: #423d3d;
+  margin-top: 4px;
+}
+
+.card-body p {
+  font-size: 0.95em;
+  color: #423d3d;
+  margin: 8px 0;
 }
