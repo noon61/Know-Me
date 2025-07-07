@@ -1,10 +1,13 @@
-import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import './Nav.css'
+import React from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import './Nav.css';
 
 const Nav = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const currentPath = location.pathname;
+
+  const isLoggedIn = !!localStorage.getItem('token');
 
   return (
     <div className="nav-fixed">
@@ -34,18 +37,25 @@ const Nav = () => {
               Message
             </Link>
           </li>
-          <li className="nav-login nav-item ">
+          <li className="nav-login nav-item">
             <Link
-              to="/login"
+              to={isLoggedIn ? "#" : "/login"}
               className={currentPath === "/login" ? "active logout-button" : "logout-button"}
+              onClick={(e) => {
+                if (isLoggedIn) {
+                  e.preventDefault(); // "#" への遷移を防止
+                  localStorage.removeItem('token');
+                  navigate('/login'); // ログアウト後にログインページへ遷移
+                }
+              }}
             >
-              Log out
+              {isLoggedIn ? "Log out" : "Log in"}
             </Link>
           </li>
         </ul>
       </nav>
     </div>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;

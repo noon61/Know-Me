@@ -1,71 +1,60 @@
 .container {
   padding: 20px;
-  font-family: sans-serif;
+  text-align: center;
 }
 
 .search-header {
-  margin-bottom: 1.5rem;
+  margin-bottom: 20px;
 }
 
 .search-label {
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin-bottom: 10px;
 }
 
 .condition-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 1rem;
+  margin-bottom: 10px;
 }
 
 .tag {
-  background-color: #e0f0ff;
-  color: #007bff;
-  padding: 4px 10px;
+  display: inline-block;
+  background-color: #f2f2f2;
+  color: #333;
+  padding: 6px 10px;
+  margin: 4px;
   border-radius: 12px;
-  font-size: 0.9rem;
+  font-size: 0.9em;
+}
+
+.no-result {
+  color: #777;
+  margin-top: 20px;
 }
 
 .result-count {
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-top: 10px;
 }
 
-.no-result {
-  color: #999;
-  font-style: italic;
-}
-
-/* 🌟 名刺カードの横並びレイアウト */
 .result-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 16px;
+  margin-top: 20px;
 }
 
-/* 🌟 各カードのスタイル（名刺風） */
 .result-card {
-  flex: 1 0 calc(20% - 16px); /* 5列: 100% ÷ 5 = 20% */
-  box-sizing: border-box;
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 16px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  min-width: 160px;
-  max-width: 220px;
+  background: #ffeef0;
+  border-radius: 16px;
+  padding: 16px 20px;
+  width: 280px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
 }
 
-/* 📱 レスポンシブ対応（スマホや狭い画面） */
-@media (max-width: 768px) {
-  .result-card {
-    flex: 1 0 calc(50% - 16px); /* 2列 */
-  }
-}
-
-@media (max-width: 480px) {
-  .result-card {
-    flex: 1 0 100%; /* 1列 */
-  }
+.result-card:hover {
+  transform: scale(1.03);
 }

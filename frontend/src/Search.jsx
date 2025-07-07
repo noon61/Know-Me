@@ -52,15 +52,15 @@ const Search = ({ searchResult, setSearchResult }) => {
     setScrollDirection(direction);
     if (type === 'lab') {
       if (direction === 'left') setLabIndex(prev => Math.max(prev - 5, 0));
-      else setLabIndex(prev => Math.min(prev + 5, labs.length - 5));
+      else setLabIndex(prev => Math.min(prev + 5, Math.floor(labs.length/ 5) * 5));
     }
     if (type === 'circle') {
       if (direction === 'left') setCircleIndex(prev => Math.max(prev - 5, 0));
-      else setCircleIndex(prev => Math.min(prev + 5, circles.length - 5));
+      else setCircleIndex(prev => Math.min(prev + 5, Math.floor(circles.length / 5) * 5));
     }
     if (type === 'subject') {
       if (direction === 'left') setSubjectIndex(prev => Math.max(prev - 5, 0));
-      else setSubjectIndex(prev => Math.min(prev + 5, filteredSubjects.length - 5));
+      else setSubjectIndex(prev => Math.min(prev + 5, ));
     }
   };
 
@@ -149,7 +149,9 @@ const Search = ({ searchResult, setSearchResult }) => {
               onClick={() => handleScroll('lab', 'left')}
             />
             <ul className="search-list" key={labIndex}>
-                {labs.slice(labIndex, labIndex + 5).map(lab => (
+                {labs
+                .filter(option => option.id !== 0)
+                .slice(labIndex, labIndex + 5).map(lab => (
                 <motion.li
                   key={lab.id}
                   className={`search-list-item ${selectedLabs.includes(lab.id) ? 'selected' : ''}`}
@@ -158,7 +160,7 @@ const Search = ({ searchResult, setSearchResult }) => {
                   initial="hidden"
                   animate="visible"
                   exit="exit"
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.15}}
                 >
                   {lab.name}
                 </motion.li>
@@ -185,7 +187,9 @@ const Search = ({ searchResult, setSearchResult }) => {
               onClick={() => handleScroll('circle', 'left')}
             />
             <ul className="search-list" key={circleIndex}>
-              {circles.slice(circleIndex, circleIndex + 5).map(circle => (
+              {circles
+              .filter(option => option.id !== 0)
+              .slice(circleIndex, circleIndex + 5).map(circle => (
                 <motion.li
                   key={circle.id}
                   className={`search-list-item ${selectedCircles.includes(circle.id) ? 'selected' : ''}`}
@@ -194,7 +198,7 @@ const Search = ({ searchResult, setSearchResult }) => {
                   initial="hidden"
                   animate="visible"
                   exit="exit"
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.15 }}
                 >
                   {circle.name}
                 </motion.li>
@@ -247,7 +251,7 @@ const Search = ({ searchResult, setSearchResult }) => {
                   initial="hidden"
                   animate="visible"
                   exit="exit"
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.15 }}
                 >
                   {subject.name}
                 </motion.li>

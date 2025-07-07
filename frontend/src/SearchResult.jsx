@@ -1,21 +1,21 @@
 import React from 'react';
-import { useLocation,useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './searchResult.css';
 
 const SearchResult = ({ searchResult }) => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { searchWord = [] } = location.state || {}; // 配列として扱う
+  const { searchWord = [] } = location.state || {};
 
   const resultCount = searchResult?.length || 0;
 
   const handleShowProfile = (id) => () => {
     console.log(`Show profile for user with ID: ${id}`);
-
     navigate('/userProfile', {
-      state: { userId: id }
+      state: { userId: id },
     });
-  }
+  };
+
   return (
     <div className="container">
       <div className="search-header">
@@ -39,11 +39,14 @@ const SearchResult = ({ searchResult }) => {
         )}
       </div>
 
-      {/* 🔽 検索結果（名刺風カード） */}
       <div className="result-list">
         {resultCount > 0 &&
           searchResult.map((item) => (
-            <div key={item.id} className="result-card" onClick={handleShowProfile(item.id)}>
+            <div
+              key={item.id}
+              className="result-card"
+              onClick={handleShowProfile(item.id)}
+            >
               <p><strong>学年:</strong> {item.grade}</p>
               <p><strong>Name:</strong> {item.name}</p>
             </div>
