@@ -57,6 +57,7 @@ function Profile() {
     }
     try {
       const decoded = jwtDecode(token);
+      
       // ユーザーIDをセットし、後続のeffectで利用する
       setUserId(decoded.id);
 
@@ -308,13 +309,26 @@ function Profile() {
     <div className="profile-container">
       <div className="profile-left">
         <img src={image} alt="プロフィール画像" className="profile-image" />
-        {isEditing && <input type="file" accept="image/*" onChange={handleImageChange} />}
+        {isEditing && (
+          <input type="file" accept="image/*" onChange={handleImageChange} />
+        )}
 
         <div className="profile-name-info">
           {isEditing ? (
             <>
               <input value={name} onChange={(e) => setName(e.target.value)} />
-              <input value={grade} onChange={(e) => setGrade(e.target.value)} />
+              <select
+                className="grade-select"
+                value={grade}
+                onChange={(e) => setGrade(e.target.value)}
+              >
+                <option value="学部1年">学部1年</option>
+                <option value="学部2年">学部2年</option>
+                <option value="学部3年">学部3年</option>
+                <option value="学部4年">学部4年</option>
+                <option value="修士1年">修士1年</option>
+                <option value="修士2年">修士2年</option>
+              </select>
             </>
           ) : (
             <>
